@@ -12,10 +12,10 @@ import Button from '@components/Button';
 import { useIntl } from 'react-intl';
 import message from './message';
 
-interface Props {}
+interface Props { }
 
 // eslint-disable-next-line
-function Home({}: Props) {
+function Home({ }: Props) {
   const { register, handleSubmit } = useForm<LoginFormData>();
   const onSubmit = (data: LoginFormData) => console.log(data);
   const intl = useIntl();
