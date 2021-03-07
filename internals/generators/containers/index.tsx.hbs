@@ -6,16 +6,18 @@
 
 import React, { memo } from 'react';
 import ErrorBound from '@components/ErrorBound';
-
+import useInjectReducer from '@redux/useInjectReducer';
+import reducers{{ properCase name }} from './store/reducers';
+import Wrap{{ properCase name }} from './style';
 
 interface Props {}
 
 // eslint-disable-next-line
 function {{ properCase name }}({}: Props) {
-
+useInjectReducer('{{ properCase name }}', reducers{{ properCase name }});
 return (
 <ErrorBound>
-  {{ properCase name }} 
+  <Wrap{{ properCase name }}> {{ properCase name }} </Wrap{{ properCase name }}>
 </ErrorBound>
 );
 }
