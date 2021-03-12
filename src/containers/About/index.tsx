@@ -4,17 +4,16 @@
  * make by phamthainb
  */
 
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo, useEffect } from 'react';
 import ErrorBound from '@components/ErrorBound';
 import useInjectReducer from '@redux/useInjectReducer';
 import reducersAbout from './store/reducers';
 import WrapAbout from './style/index';
 import Child from './style/child';
-// import { requestInter } from '@api/axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { changePage, getDataAboutResquest } from './store/actions';
 import { selectAboutStore } from './store/selecters';
-import { AboutItem, PaginationType, StoreAbout } from './store/types';
+import { AboutItem, PaginationType } from './store/types';
 import Pagination from '@components/Pagination';
 import Search from '@components/Search';
 
@@ -40,11 +39,8 @@ function About({}: Props) {
   useEffect(() => {
     const page: number = pagination.page;
     const limit: number = pagination.limit;
-
-    // const name: string = data.name;
     dispatch(getDataAboutResquest({ page, limit, search }));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    // dispatch(getDataAboutSearch({ name }));
   }, [pagination, search]);
 
   useEffect(() => {
@@ -62,7 +58,6 @@ function About({}: Props) {
 
   return (
     <ErrorBound>
-      {/* {state} */}
       <Search />
       <WrapAbout>{list}</WrapAbout>
       <Pagination
